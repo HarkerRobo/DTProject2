@@ -10,8 +10,10 @@ package robotcode.commands;
  * @author 18AkhilA
  */
 public class SetSpeedCommand extends CommandBase {
+    double speed;
     
-    public SetSpeedCommand() {
+    public SetSpeedCommand(double speed2) {
+        speed=speed2;
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
@@ -22,11 +24,13 @@ public class SetSpeedCommand extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        driveTrain.setSpeed(speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+       
+        return true;
     }
 
     // Called once after isFinished returns true
