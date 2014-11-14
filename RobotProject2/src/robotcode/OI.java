@@ -3,12 +3,24 @@ package robotcode;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import robotcode.commands.ForwardCommand;
+import robotcode.commands.ReverseCommand;
+import robotcode.commands.SetSpeedCommand;
+import robotcode.commands.StopCommand;
+import robotcode.wrappers.GamepadWrapper;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
+    public OI() {
+        GamepadWrapper gam = new GamepadWrapper(1);
+        gam.getButtonA().whilePressed(new ForwardCommand());
+        gam.getButtonB().whilePressed(new ReverseCommand());
+        gam.getButtonX().whilePressed(new StopCommand());
+        gam.getButtonY().whilePressed(new SetSpeedCommand(0.5));
+    }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button

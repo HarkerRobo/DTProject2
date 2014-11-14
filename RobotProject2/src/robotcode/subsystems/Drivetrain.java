@@ -75,4 +75,20 @@ public class Drivetrain extends Subsystem {
         
     }
     
+    public void turnLeft()
+    {
+        talon1.set(-1);
+        talon2.set(-1);
+        talon3.set(1);
+        talon4.set(1);
+    }
+    
+    public void turnRight()
+    {
+        talon1.set(1);
+        talon2.set(1);
+        talon3.set(-1);
+        talon4.set(-1);
+    }
+    
 }
