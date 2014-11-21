@@ -7,6 +7,7 @@ import robotcode.commands.ForwardCommand;
 import robotcode.commands.ReverseCommand;
 import robotcode.commands.SetSpeedCommand;
 import robotcode.commands.StopCommand;
+import robotcode.commands.SwashingCommand;
 import robotcode.wrappers.GamepadWrapper;
 
 /**
@@ -20,6 +21,7 @@ public class OI {
         gam.getButtonB().whilePressed(new ReverseCommand());
         gam.getButtonX().whilePressed(new StopCommand());
         gam.getButtonY().whilePressed(new SetSpeedCommand(0.5));
+        gam.getButtonSelect().whilePressed(new SwashingCommand());
     }
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
