@@ -80,7 +80,7 @@ public class Drivetrain extends Subsystem {
         talon4.set(0);
         
     }
-    
+    //Assuming Talons 1&2 are on Left
     public void turnLeft()
     {
         talon1.set(-1);

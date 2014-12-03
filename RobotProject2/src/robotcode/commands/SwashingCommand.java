@@ -25,7 +25,7 @@ public class SwashingCommand extends CommandBase {
     protected void execute() {
         //Sets a direction variable and turns robot right while moving forward
         String direc = "L";
-        driveTrain.turnMoveRight();
+        driveTrain.turnMoveLeft();
         
         //Does swashing for 5 directions
         for(int swashOn = 0; swashOn < 5; swashOn = swashOn+1){
@@ -37,8 +37,8 @@ public class SwashingCommand extends CommandBase {
             if(System.currentTimeMillis() >= timeFinal){
                    driveTrain.stop();
                 if(direc.equals("L")){
-                 direc = "R";
-                   driveTrain.turnMoveRight();
+                    direc = "R";
+                    driveTrain.turnMoveRight();
                 }else{
                     direc = "L";
                     driveTrain.turnMoveLeft();
